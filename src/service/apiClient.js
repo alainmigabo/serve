@@ -7,7 +7,7 @@ export const apiClient = axios.create({ baseURL });
 
 apiClient.interceptors.request.use(
   async (config) => {
-    config.headers.Authorization = `Bearer ${token}`;
+    token && (config.headers.Authorization = `Bearer ${token}`);
 
     return config;
   },

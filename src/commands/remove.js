@@ -1,11 +1,11 @@
 import { AxiosError } from "axios";
 import { httpService } from "../service/index.js";
 
-export const getById = async ({ path, id }) => {
+export const remove = async ({ path, id }) => {
   try {
     const service = httpService(path);
-    const { data } = await service.getById(id);
-    console.log(data);
+    const response = await service.delete(id);
+    console.log(response);
   } catch (error) {
     if (error instanceof AxiosError) {
       console.log(JSON.stringify(error.response.data.message));
