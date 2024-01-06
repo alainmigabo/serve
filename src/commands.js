@@ -1,18 +1,19 @@
 import yargs from "yargs";
 import { hideBin } from "yargs/helpers";
-import { apiClient } from "./service/index.js";
-import { setResource } from "./utils/index.js";
-import { authenticate, clear } from "./commands/index.js";
+import {
+  authenticate,
+  clear,
+  getAll,
+  getById,
+  initialize,
+} from "./commands/index.js";
 
 yargs(hideBin(process.argv))
   .command(
     "init <baseURL>",
     "Initialize CLI by providing url to use while making requests",
     () => {},
-    async ({ baseURL }) => {
-      await setResource("baseURL", baseURL);
-      console.log('Here')
-    }
+    initialize
   )
   .command(
     "auth <credentials>",
@@ -20,14 +21,12 @@ yargs(hideBin(process.argv))
     () => {},
     authenticate
   )
+  .command("getall <path>", "Get all from a specified path", () => {}, getAll)
   .command(
-    "getall <path>",
-    "Get all from a specified path",
+    "getone <path> <id>",
+    "Get one by the specified Id",
     () => {},
-    async ({ path }) => {
-      const data = await apiClient.get(path);
-      console.log(data);
-    }
+    getById
   )
   .command("clear", "Clear Resources", () => {}, clear)
   .demandCommand(1)
