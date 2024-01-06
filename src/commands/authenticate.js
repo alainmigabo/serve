@@ -9,6 +9,7 @@ export const authenticate = async ({ credentials }) => {
     } = await apiClient.post("auth", JSON.parse(credentials));
 
     await setResource("token", token);
+    console.log("Authenticated successfully!");
   } catch (error) {
     if (error instanceof AxiosError) {
       console.log(JSON.stringify(error.response.data.message));

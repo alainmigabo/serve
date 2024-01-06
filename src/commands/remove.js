@@ -6,6 +6,7 @@ export const remove = async ({ path, id }) => {
     const service = httpService(path);
     const response = await service.delete(id);
     console.log(response);
+    console.log("Deleted successfully!");
   } catch (error) {
     if (error instanceof AxiosError) {
       console.log(JSON.stringify(error.response.data.message));

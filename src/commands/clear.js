@@ -6,7 +6,10 @@ export const clear = async () => {
       "Are you sure you want to delete all your resources? [y/n]: "
     );
 
-    if (confirmed) await clearResources();
+    if (confirmed) {
+      await clearResources();
+      console.log("Cleared resources successfully!");
+    }
   } catch (error) {
     if (error.message === "Invalid input") {
       console.log(error.message);

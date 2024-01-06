@@ -6,6 +6,7 @@ export const update = async ({ path, id, data }) => {
     const service = httpService(path);
     const { data: response } = await service.update(JSON.parse(data), id);
     console.log(response);
+    console.log("Updated successfully!");
   } catch (error) {
     if (error instanceof AxiosError) {
       console.log(JSON.stringify(error.response.data.message));

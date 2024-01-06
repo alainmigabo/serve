@@ -1,5 +1,6 @@
 import { setResource } from "../utils/index.js";
 
 export const initialize = async ({ baseURL }) => {
-  return await setResource("baseURL", baseURL);
+  await setResource("baseURL", baseURL);
+  console.log("Initialized successfully!yy");
 };
