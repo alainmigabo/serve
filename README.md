@@ -1,6 +1,6 @@
 # TASH
 
-tash is a javascript library that helps in easy CRUD testing in terminal by providing 'tash' CLI
+tash is a library that helps in easy CRUD testing in terminal by providing 'tash' CLI
 
 ## Installation
 
