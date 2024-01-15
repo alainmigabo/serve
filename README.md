@@ -6,7 +6,7 @@ tash is a library that helps in easy CRUD testing in terminal by providing 'tash
 
 To install the package run:
 
-`npm install tash`
+`npm install tash -D`
 
 After installation run the following command to register the tash cli that you will be using (with the brackets):
 
