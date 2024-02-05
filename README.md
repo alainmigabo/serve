@@ -20,8 +20,8 @@ run `tash -help` for help and choose the command regarding what you need to do
 
 The spacing in your writing doesn't affect anything, the key is following these guidelines:
 
- - The object must be enclosed in triple quotes (not backticks)
- - Properties and string values must also be in double quotes (not single quotes)
+ - The object must be enclosed in triple quotes (**backticks don't work the same**)
+ - Properties and string values must also be in double quotes (**not single quotes**)
  
 ```
 '''
